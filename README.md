@@ -25,8 +25,10 @@ If you need to set back your dotnet new list to "factory defaults", use this com
 * ELK instance - I used the ``sebp/elk`` docker image. 
 
 To get the ELK instance running (assuming you have Docker installed):
-``docker pull sebp/elk`` (this gets the image onto your computer)
-``docker run -p 5601:5601 -p 9200:9200 -p 5044:5044 -it --name elk sebp/elk``  (this runs the ELK instance)
+
+`docker pull sebp/elk` (this gets the image onto your computer)
+
+`docker run -p 5601:5601 -p 9200:9200 -p 5044:5044 -it --name elk sebp/elk`  (this runs the ELK instance)
 
 The ELK docker container is well-documented here: https://elk-docker.readthedocs.io/
 
