@@ -36,7 +36,6 @@ namespace Tccc2019.ApiStarter
                     { "oauth2", scopes }
                 });
             });
-
             return services;
         }
     }
