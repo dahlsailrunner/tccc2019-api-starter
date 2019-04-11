@@ -14,7 +14,7 @@ Installation of the templates is simple.
 
 Download the template from Azure DevOps (use the download link): https://knowyourtoolset.visualstudio.com/TCCC-2019/_packaging?_a=package&feed=TCCC-2019&package=Tccc2019.ApiStarter&protocolType=NuGet&version=1.0.0
 
-`dotnet new -i C:\users\<yourusername>\Downloads\Tccc2019.ApiStarter --nuget-source https://realpage.myget.org/F/rp-packages/auth/7847a040-3b78-4f9c-9a4b-3981f6d860db/api/v3/index.json`
+`dotnet new -i C:\users\<yourusername>\Downloads\Tccc2019.ApiStarter`
 
 If you need to set back your dotnet new list to "factory defaults", use this command:
 
