@@ -1,17 +1,36 @@
 # TCCC 2019 API Starter
+[![Build status](https://knowyourtoolset.visualstudio.com/TCCC-2019/_apis/build/status/TCCC2019-Build%20and%20Publish%20API%20Starter%20Template)](https://knowyourtoolset.visualstudio.com/TCCC-2019/_build/latest?definitionId=15)
 
-ASP.NET Core WebAPI templates that add Swagger, error handling/logging, and authN/Z to project.
+This ASP.NET Core API starter template has the following features:
+* Swagger doc and UI - and starting the project starts on the swagger UI page
+* OAuth2 bearer support from a public demo identity server (but configurable)
+* All api routes are secured, and all do performance logging (to SQL Server)
+* Errors are shielded from callers and logged to an ELK instance
+* CORS support is added and supports a local Angular SPA to start
+* Most configuration is in ``appsettings.json``
 
 ## Installation 
 Installation of the templates is simple.  
 
-`dotnet new -i RealPage.ApiTemplates --nuget-source https://realpage.myget.org/F/rp-packages/auth/7847a040-3b78-4f9c-9a4b-3981f6d860db/api/v3/index.json`
+Download the template from Azure DevOps (use the download link): https://knowyourtoolset.visualstudio.com/TCCC-2019/_packaging?_a=package&feed=TCCC-2019&package=Tccc2019.ApiStarter&protocolType=NuGet&version=1.0.0
+
+`dotnet new -i C:\users\<yourusername>\Downloads\Tccc2019.ApiStarter --nuget-source https://realpage.myget.org/F/rp-packages/auth/7847a040-3b78-4f9c-9a4b-3981f6d860db/api/v3/index.json`
 
 If you need to set back your dotnet new list to "factory defaults", use this command:
 
 `dotnet new --debug:reinit`
 
-## Templates
+## Prerequisites for Out-of-the-Box Execution
+* SQL Server - SQL Express is free and you can just create a ``Logging`` database and leave it empty
+* ELK instance - I used the ``sebp/elk`` docker image. 
+
+To get the ELK instance running (assuming you have Docker installed):
+``docker pull sebp/elk`` (this gets the image onto your computer)
+``docker run -p 5601:5601 -p 9200:9200 -p 5044:5044 -it --name elk sebp/elk``  (this runs the ELK instance)
+
+The ELK docker container is well-documented here: https://elk-docker.readthedocs.io/
+
+## Template Installation
 
 ### **dotnet new tccc-api**
 This template includes a Swagger user interface (via Swashbuckle.AspNetCore) and can accept bearer tokens from the green book identity server.
@@ -26,6 +45,7 @@ Here's a concrete example:
 
 The above command will create a new directory in your current working directory called `Tccc.ApiSample` (from the -o output directory parameter) and create a project in that directory called `Tccc.ApiSample`.
 
+
 #### Testing an error
 Try the ``thingies/{id}`` route with a value >= 2 and you will get a an exception that should be handled and logged.
 
@@ -33,11 +53,12 @@ Try the ``thingies/{id}`` route with a value >= 2 and you will get a an exceptio
 
 Name | Purpose | Default value
 --- | --- | ---
-RP_Authority | Defines the identity server (green book) url that will issue tokens for the api | https://myldev.corp.realpage.com/identity
-RP_Authority2 | Same as above but allows for a second id server instance in non-prd environments | https://demo.identityserver.io
-RP_Client | OpenID Connect client id for signing in via Swagger | implicit
-RP_Scope | OAuth2 scope that will be required for this api | api
-RP_LogApiUrl | URL for logging API to write log entries to ELK stack (only applies to rpapieh template) | http://logapidev.realpage.com/api/
+``ConnectionStrings.LoggingDb`` | Defines the database that performance logs will be written to (they go to a table called ``PerfLog``) | "Server=.\\sqlexpress;Database=Logging;Trusted_Connection=True;"
+``ElasticsearchUri`` | Defines the Elasticsearch cluster that error logs are written to (the index pattern is ``error-*``) | http://localhost:9200
+``Authority`` | Defines the OpenId-Connect / OAuth2 server that for authentication (a client for the Swagger UI is in the code) | https://demo.identityserver.io
+``ApiErrorUrl`` | Get this from Kibana AFTER posting an initial error to Elasticsearch | http://localhost:5601/goto/37e0af6fc02e0aee006ed95521550d5c
+``ApiName`` | OAuth2 "resource name" representing your api | api
+``CorsOrigins`` | Domains you want to allow for browser-based api calls | http://localhost:4200
 
 
 ## Todos in the projects
