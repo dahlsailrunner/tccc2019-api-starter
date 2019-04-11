@@ -1,0 +1,10 @@
+  {   
+    "author": "Erik Dahl",
+    "classifications": [ "API", "ErrorHandling", "ELK", "Dapper" ],
+    "tags": { "language": "C#" },
+    "identity": "Tccc2019.ApiStarter",
+    "name": "TCCC 2019 API Starter",
+    "shortName": "tccc-api",
+    "sourceName": "Tccc2019.ApiStarter",
+    "preferNameDirectory": true
+  } 
