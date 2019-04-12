@@ -13,7 +13,7 @@ This ASP.NET Core API starter template has the following features:
 Installation of the templates is simple.  
 
 Download the template from Azure DevOps (use the download link): 
-https://knowyourtoolset.visualstudio.com/TCCC-2019/_packaging?_a=package&feed=TCCC-2019-Demos&package=Tccc2019.ApiStarter&protocolType=NuGet&version=1.0.1
+https://knowyourtoolset.visualstudio.com/TCCC-2019/_packaging?_a=package&feed=TCCC-2019-Demos&package=Tccc2019.ApiStarter&protocolType=NuGet
 
 `dotnet new -i C:\users\<yourusername>\Downloads\Tccc2019.ApiStarter`
 
