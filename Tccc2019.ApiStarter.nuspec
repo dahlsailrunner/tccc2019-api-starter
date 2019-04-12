@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Tccc2019.ApiStarter</id>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <authors>Erik Dahl</authors>
     <description>ASP.NET Core 2.2 web API template that adds Swagger, JWT authentication, good error handling,
        performance logging, and more. See the **readme** on the project site for more information.
