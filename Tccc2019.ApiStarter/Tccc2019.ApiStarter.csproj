@@ -15,12 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Tccc2019.ApiBooster">
-      <HintPath>..\..\tccc2019-api-booster\Tccc2019.ApiBooster\bin\Debug\netcoreapp2.2\Tccc2019.ApiBooster.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

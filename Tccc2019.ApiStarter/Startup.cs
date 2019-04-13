@@ -31,6 +31,7 @@ namespace Tccc2019.ApiStarter
         {                                    
             var authority = Configuration.GetValue<string>("Authority");
             var apiName = Configuration.GetValue<string>("ApiName");
+
             services.AddAuthentication("Bearer")
                 .AddIdentityServerAuthentication(options =>
                 {
@@ -49,6 +50,7 @@ namespace Tccc2019.ApiStarter
                     options.Filters.Add(new TrackPerformanceFilter());
                 })
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
             services.AddSwaggerGenWithIdentityServer(Configuration, ApiName);
         }
 
