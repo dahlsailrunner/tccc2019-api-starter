@@ -12,9 +12,11 @@ This ASP.NET Core API starter template has the following features:
 ## Installation 
 Installation of the templates is simple.  
 
-Download the template from Azure DevOps (use the download link): https://knowyourtoolset.visualstudio.com/TCCC-2019/_packaging?_a=package&feed=TCCC-2019&package=Tccc2019.ApiStarter&protocolType=NuGet&version=1.0.0
+Download the template from Azure DevOps (use the download link): 
 
-`dotnet new -i C:\users\<yourusername>\Downloads\Tccc2019.ApiStarter`
+https://knowyourtoolset.visualstudio.com/TCCC-2019/_packaging?_a=package&feed=TCCC-2019-Demos&package=Tccc2019.ApiStarter&protocolType=NuGet
+
+`dotnet new -i <nupkg file you downloaded>`
 
 If you need to set back your dotnet new list to "factory defaults", use this command:
 
@@ -72,11 +74,16 @@ So if you open a "Task View" in Visual Studio you should be able to see the shor
 
 
 ## Contributing
+This template was created using the instructions found under these two links (there are likely more):
+
+* https://docs.microsoft.com/en-us/dotnet/core/tools/custom-templates
+* https://devblogs.microsoft.com/dotnet/how-to-create-your-own-templates-for-dotnet-new/
+
 If you'd like to add more templates or update the existing ones:
 
 - clone the repo
 - branch it
-- make your changes, update the semantic version of the `.nuspec` file, and update the readme.md and/or releasenotes.md documents
+- make your changes, **update the semantic version of the `.nuspec` file**, and update the readme.md and/or releasenotes.md documents
 - commit and publish your new branch
 - submit a pull request
 
