@@ -73,11 +73,16 @@ So if you open a "Task View" in Visual Studio you should be able to see the shor
 
 
 ## Contributing
+This template was created using the instructions found under these two links (there are likely more):
+
+* https://docs.microsoft.com/en-us/dotnet/core/tools/custom-templates
+* https://devblogs.microsoft.com/dotnet/how-to-create-your-own-templates-for-dotnet-new/
+
 If you'd like to add more templates or update the existing ones:
 
 - clone the repo
 - branch it
-- make your changes, update the semantic version of the `.nuspec` file, and update the readme.md and/or releasenotes.md documents
+- make your changes, **update the semantic version of the `.nuspec` file**, and update the readme.md and/or releasenotes.md documents
 - commit and publish your new branch
 - submit a pull request
 
